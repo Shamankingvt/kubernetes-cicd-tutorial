@@ -30,7 +30,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ env.OWNER_LC }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/${{ env.OWNER_LC }}:${{ github.sha }}
       - name: Update GitOps repository
         shell: bash
         env:
