@@ -21,6 +21,8 @@ jobs:
       - name: Downcase REPO
         run: |
           echo "REPO=${GITHUB_REPOSITORY@L}" >>${GITHUB_ENV}
+        env:
+          OWNER: '${{ github.repository }}'
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
